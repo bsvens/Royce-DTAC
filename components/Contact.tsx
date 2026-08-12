@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { site } from "@/lib/site";
+import { site, flags } from "@/lib/site";
 import { Reveal } from "./motion/Reveal";
 import {
   CalendarIcon,
@@ -50,12 +50,16 @@ export default function Contact() {
   }
 
   const actions = [
-    {
-      label: "Book",
-      icon: CalendarIcon,
-      href: site.calendlyUrl,
-      external: true,
-    },
+    ...(flags.enableBooking
+      ? [
+          {
+            label: "Book",
+            icon: CalendarIcon,
+            href: site.calendlyUrl,
+            external: true,
+          },
+        ]
+      : []),
     {
       label: "Message",
       icon: ChatIcon,
@@ -69,7 +73,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-base">
+    <section id="contact" className="relative overflow-hidden">
       {/* Refracting light behind the glass */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/20 blur-[110px]" />
@@ -80,7 +84,8 @@ export default function Contact() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Intro */}
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest2 text-accent">
+            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
+              <span className="hazard-mark" aria-hidden />
               03 — Start here
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
@@ -88,11 +93,11 @@ export default function Contact() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">
               Tell me what you&rsquo;re responsible for and what&rsquo;s keeping
-              you up at night. The first consultation is free and confidential —
-              no obligation, no sales script.
+              you up at night — an event, an operation, a team, a policy. No
+              obligation, no sales script.
             </p>
             <p className="mt-4 font-mono text-sm text-ink-faint">
-              Typical reply within one business day.
+              Every message is read personally and kept confidential.
             </p>
           </Reveal>
 
@@ -135,12 +140,16 @@ export default function Contact() {
                     {site.name}
                   </h3>
                   <p className="mt-1 font-mono text-xs uppercase tracking-widest text-ink-faint">
-                    Risk &amp; Safety Consultant
+                    {site.role}
                   </p>
                 </div>
 
                 {/* Quick actions */}
-                <div className="mt-6 grid grid-cols-3 gap-2.5">
+                <div
+                  className={`mt-6 grid gap-2.5 ${
+                    actions.length === 3 ? "grid-cols-3" : "grid-cols-2"
+                  }`}
+                >
                   {actions.map((action) => {
                     const Icon = action.icon;
                     const inner = (

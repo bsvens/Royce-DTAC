@@ -5,10 +5,11 @@ import { Reveal } from "./motion/Reveal";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
-const stats = [
-  { value: "20+", label: "Years in safety and risk" },
-  { value: "Field-first", label: "Findings from the floor, not a checklist" },
-  { value: "Independent", label: "No product to sell you, no quota to hit" },
+const credentials = [
+  { value: "Use of Force", label: "Recognized subject-matter expert" },
+  { value: "Tactical Team Leader", label: "Operational command experience" },
+  { value: "All-Hazard Evaluator", label: "Staffing & mitigation for major events" },
+  { value: "CA Certified", label: "Multiple public-safety boards & institutions" },
 ];
 
 export default function Experience() {
@@ -17,41 +18,45 @@ export default function Experience() {
   return (
     <section id="experience" className="relative border-b hairline bg-panel/40">
       <div className="mx-auto max-w-content px-5 py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-widest2 text-accent">
+            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
+              <span className="hazard-mark" aria-hidden />
               02 — Who you&rsquo;re working with
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
-              Experience that reads a room before it reads a report
+              A career at the sharp end of public safety
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-              Two decades across operational environments where the cost of an
-              overlooked risk is measured in people, not paperwork. That work
-              builds an instinct for the hazard everyone has walked past so many
-              times it stopped registering.
+              Royce has spent most of his adult life in law enforcement and is a
+              recognized subject-matter expert on use of force. As a tactical
+              team leader, he has operated where the margin for a missed risk is
+              smallest — and where preparation is the difference.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-              Every engagement is direct, confidential, and grounded in what your
-              team actually does day to day. The goal is never a thicker binder —
-              it&rsquo;s an organization that sees clearly and responds well.
+              As an all-risk evaluator for major community events, he has been
+              responsible for staffing, anticipating, and mitigating every hazard
+              a crowd can present. He holds certifications from numerous
+              California public-safety boards and institutions.
             </p>
           </Reveal>
 
-          <dl className="flex flex-col divide-y divide-white/10 self-center rounded-2xl border border-white/10 bg-base/40">
-            {stats.map((stat, i) => (
+          <dl className="grid grid-cols-2 gap-3 self-center">
+            {credentials.map((c, i) => (
               <motion.div
-                key={stat.label}
-                initial={reduce ? { opacity: 0 } : { opacity: 0, x: 18 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={c.value}
+                initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: EASE }}
-                className="flex items-baseline gap-4 px-6 py-5"
+                transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
+                className="flex flex-col rounded-2xl border border-white/10 bg-base/40 p-5"
               >
-                <dt className="font-serif text-2xl font-semibold text-accent sm:text-3xl">
-                  {stat.value}
+                <dt className="font-serif text-lg font-semibold leading-tight text-accent">
+                  {c.value}
                 </dt>
-                <dd className="text-sm leading-snug text-ink-muted">{stat.label}</dd>
+                <dd className="mt-2 text-sm leading-snug text-ink-muted">
+                  {c.label}
+                </dd>
               </motion.div>
             ))}
           </dl>

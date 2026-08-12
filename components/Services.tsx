@@ -9,26 +9,26 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 const services = [
   {
     ref: "SVC / ASSESSMENT",
-    title: "Risk assessment",
+    title: "All-hazard risk assessment",
     summary:
-      "A clear-eyed read of where your organization actually stands — not where the paperwork says it does.",
+      "A structured read of the threats and gaps around your people, event, or operation — from someone who has spent a career anticipating what goes wrong.",
     points: [
-      "On-site hazard and process walkthroughs",
-      "Gap analysis against relevant standards",
-      "Prioritized findings with practical remediation",
-      "Plain-language reporting leadership can act on",
+      "All-hazard evaluation for events, venues, and operations",
+      "Threat, vulnerability, and crowd-safety analysis",
+      "Staffing plans and contingency planning",
+      "Use-of-force policy and practice review",
     ],
   },
   {
     ref: "SVC / TRAINING",
-    title: "Safety training",
+    title: "Use-of-force & safety training",
     summary:
-      "Training that changes what people do, built around the risks your team faces — not a generic slide deck.",
+      "Instruction grounded in real tactical command and recognized use-of-force expertise — built for how your people actually operate under pressure.",
     points: [
-      "Role-specific hazard awareness",
-      "Emergency response and drills",
-      "Supervisor and frontline programs",
-      "Follow-up to make the learning stick",
+      "Use-of-force fundamentals and review",
+      "De-escalation and decision-making under pressure",
+      "Tactical team and incident-response readiness",
+      "Supervisor and frontline instruction",
     ],
   },
 ];
@@ -37,10 +37,11 @@ export default function Services() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="services" className="relative border-b hairline bg-base">
+    <section id="services" className="relative border-b hairline">
       <div className="mx-auto max-w-content px-5 py-20 sm:py-24">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-widest2 text-accent">
+          <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
+            <span className="hazard-mark" aria-hidden />
             01 — What we do
           </p>
           <h2 className="mt-4 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">

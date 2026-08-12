@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { site } from "@/lib/site";
+import { site, flags } from "@/lib/site";
 import { ShieldIcon } from "./icons";
 
 const nav = [
@@ -50,14 +50,23 @@ export default function Header() {
           ))}
         </nav>
 
-        <a
-          href={site.calendlyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft sm:inline-flex"
-        >
-          Book a consultation
-        </a>
+        {flags.enableBooking ? (
+          <a
+            href={site.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft sm:inline-flex"
+          >
+            Book a consultation
+          </a>
+        ) : (
+          <a
+            href="#contact"
+            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft sm:inline-flex"
+          >
+            Get in touch
+          </a>
+        )}
 
         {/* Mobile: single compact action. */}
         <a

@@ -6,11 +6,13 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import MobileCTA from "@/components/MobileCTA";
+import ScrollBackground from "@/components/ScrollBackground";
 import { flags } from "@/lib/site";
 
 export default function Home() {
   return (
     <>
+      <ScrollBackground />
       <Header />
       <main>
         <Hero />
