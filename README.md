@@ -1,10 +1,12 @@
-# Royce DTAC
+# DTAC Solutions
 
-Marketing site for Royce DTAC — independent risk assessment and safety training.
+Marketing site for **DTAC Solutions LLC** — Royce's independent risk assessment
+and safety training practice (use of force, tactical operations, all-hazard
+planning).
 
 Single landing page built with **Next.js 14 (App Router)**, **TypeScript**, and
-**Tailwind CSS**. Mobile-first, deliberately restrained visual design for a
-system-serious safety consultant.
+**Tailwind CSS**. Dark, dense, and motion-driven; mobile-first, with full-page
+scroll-snap so each section animates onto the screen as you scroll.
 
 ## Sections
 
@@ -28,10 +30,13 @@ Open http://localhost:3000.
 
 Everything configurable lives in [`lib/site.ts`](lib/site.ts):
 
-- `calendlyUrl` — the real Calendly scheduling link (used by both "Book a free
-  consultation" CTAs).
 - `formspreeEndpoint` — the real Formspree form endpoint for the contact form.
 - `contactEmail` — the public contact address.
+- `calendlyUrl` — the real Calendly scheduling link (only used when booking is
+  enabled — see below).
+- `flags.enableBooking` — `false` by default, so the site is **contact-first**.
+  Flip to `true` and Calendly "Book" CTAs appear across the header, hero, mobile
+  bar, and the glass contact card automatically.
 - `flags.showTestimonials` — set to `true` once real testimonials replace the
   placeholders in `components/Testimonials.tsx`.
 

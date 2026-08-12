@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="text-sm text-ink-faint">
-          &copy; {year} {site.name}. All rights reserved.
+          &copy; {year} {site.legalName}. All rights reserved.
         </p>
       </div>
     </footer>

@@ -29,8 +29,11 @@ export default function Hero() {
   };
 
   return (
-    <section id="top" className="relative border-b hairline">
-      <div className="relative mx-auto max-w-content px-5 pb-20 pt-20 sm:pb-28 sm:pt-28">
+    <section
+      id="top"
+      className="relative flex min-h-[100svh] snap-start items-center border-b hairline"
+    >
+      <div className="relative mx-auto w-full max-w-content px-5 pb-20 pt-20 sm:pb-28 sm:pt-28">
         {/* Discipline row — real domains, no fake availability signal */}
         <motion.div
           initial="hidden"

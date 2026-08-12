@@ -2,7 +2,9 @@
 // flags. Swap the placeholder URLs for the real ones before launch.
 
 export const site = {
-  name: "Royce DTAC",
+  name: "DTAC Solutions",
+  legalName: "DTAC Solutions LLC",
+  principal: "Royce",
   tagline: "All-hazard risk assessment & safety training",
   role: "Risk, Safety & Use-of-Force Consultant",
 

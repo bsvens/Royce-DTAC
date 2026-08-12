@@ -73,14 +73,17 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative overflow-hidden">
+    <section
+      id="contact"
+      className="relative flex min-h-[100svh] snap-start items-center overflow-hidden"
+    >
       {/* Refracting light behind the glass */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/20 blur-[110px]" />
         <div className="absolute right-10 top-10 h-64 w-64 rounded-full bg-sky-500/10 blur-[100px]" />
       </div>
 
-      <div className="relative mx-auto max-w-content px-5 py-20 sm:py-24">
+      <div className="relative mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Intro */}
           <Reveal>
@@ -105,7 +108,7 @@ export default function Contact() {
           <motion.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7, ease: EASE }}
             className="glass rounded-[28px] p-6 sm:p-8"
           >

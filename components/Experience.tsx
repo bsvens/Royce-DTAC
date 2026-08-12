@@ -16,8 +16,11 @@ export default function Experience() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="experience" className="relative border-b hairline bg-panel/40">
-      <div className="mx-auto max-w-content px-5 py-20 sm:py-24">
+    <section
+      id="experience"
+      className="relative flex min-h-[100svh] snap-start items-center border-b hairline bg-panel/40"
+    >
+      <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <Reveal>
             <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
@@ -47,7 +50,7 @@ export default function Experience() {
                 key={c.value}
                 initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: false, amount: 0.25 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
                 className="flex flex-col rounded-2xl border border-white/10 bg-base/40 p-5"
               >

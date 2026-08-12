@@ -37,8 +37,11 @@ export default function Services() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="services" className="relative border-b hairline">
-      <div className="mx-auto max-w-content px-5 py-20 sm:py-24">
+    <section
+      id="services"
+      className="relative flex min-h-[100svh] snap-start items-center border-b hairline"
+    >
+      <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <Reveal>
           <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
             <span className="hazard-mark" aria-hidden />
@@ -59,7 +62,7 @@ export default function Services() {
               key={service.title}
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-70px" }}
+              viewport={{ once: false, amount: 0.25 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-panel/60 p-7 transition-colors duration-300 hover:border-accent/40 sm:p-8"
             >
