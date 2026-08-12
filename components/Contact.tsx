@@ -106,7 +106,7 @@ export default function Contact() {
           <motion.div
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: EASE }}
             className="glass rounded-[28px] p-6 sm:p-8"
           >

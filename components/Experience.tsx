@@ -48,7 +48,7 @@ export default function Experience() {
                 key={c.value}
                 initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.25 }}
+                viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
                 className="flex flex-col rounded-2xl border border-white/10 bg-base/40 p-5"
               >

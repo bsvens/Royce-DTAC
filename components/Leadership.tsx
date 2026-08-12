@@ -42,7 +42,7 @@ export default function Leadership() {
                 key={q}
                 initial={reduce ? { opacity: 0 } : { opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.6 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease: EASE }}
                 className="flex items-baseline gap-5 py-5"
               >

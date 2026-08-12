@@ -54,7 +54,7 @@ export default function Purpose() {
               key={p.label}
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
               className="bg-base/80 p-6 sm:p-7"
             >
