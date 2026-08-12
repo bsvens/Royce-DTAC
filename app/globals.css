@@ -68,18 +68,6 @@ section[id] {
     mask-image: radial-gradient(ellipse 95% 85% at 50% 28%, #000 25%, transparent 92%);
   }
 
-  /* Caution-stripe mark — the hazard nod, used sparingly beside eyebrows. */
-  .hazard-mark {
-    display: inline-block;
-    height: 0.5rem;
-    width: 1.75rem;
-    border-radius: 2px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #f5a524 0 5px,
-      #0a0d13 5px 10px
-    );
-  }
 
   /* Hairline used to separate dense sections. */
   .hairline {

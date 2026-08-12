@@ -5,9 +5,10 @@ import { site, flags } from "@/lib/site";
 import { ShieldIcon } from "./icons";
 
 const nav = [
-  { href: "#services", label: "Services" },
+  { href: "#purpose", label: "Purpose" },
+  { href: "#services", label: "What we do" },
+  { href: "#leadership", label: "Leadership" },
   { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {

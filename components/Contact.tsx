@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { site, flags } from "@/lib/site";
 import { Reveal } from "./motion/Reveal";
+import { Eyebrow } from "./Eyebrow";
 import {
   CalendarIcon,
   ChatIcon,
@@ -87,20 +88,17 @@ export default function Contact() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Intro */}
           <Reveal>
-            <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
-              <span className="hazard-mark" aria-hidden />
-              03 — Start here
-            </p>
-            <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
+            <Eyebrow>05 / Start here</Eyebrow>
+            <h2 className="mt-5 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
               Start with a conversation
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-              Tell me what you&rsquo;re responsible for and what&rsquo;s keeping
-              you up at night — an event, an operation, a team, a policy. No
-              obligation, no sales script.
+              Tell me what you&rsquo;re responsible for — a campus, a facility, a
+              workforce, a plan. The first conversation is free, confidential,
+              and without obligation.
             </p>
             <p className="mt-4 font-mono text-sm text-ink-faint">
-              Every message is read personally and kept confidential.
+              Every message is read personally.
             </p>
           </Reveal>
 

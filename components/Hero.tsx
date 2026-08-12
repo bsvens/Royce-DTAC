@@ -9,7 +9,11 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 const line1 = ["Most", "risks", "aren’t", "hidden."];
 const line2 = ["They’re", "overlooked."];
 
-const disciplines = ["Use of force", "Tactical operations", "All-hazard planning"];
+const disciplines = [
+  "Risk assessment",
+  "Emergency planning",
+  "Critical-incident training",
+];
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -41,7 +45,7 @@ export default function Hero() {
           variants={fade}
           className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
         >
-          <span className="hazard-mark" aria-hidden />
+          <span aria-hidden className="h-px w-8 flex-none bg-accent/70" />
           {disciplines.map((d, i) => (
             <span key={d} className="flex items-center gap-3">
               {i > 0 && <span className="text-ink-faint/50">/</span>}
@@ -86,10 +90,10 @@ export default function Hero() {
           transition={{ delay: 0.55 }}
           className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted"
         >
-          Readiness isn&rsquo;t a binder on a shelf. It&rsquo;s knowing where you
-          stand before something goes wrong. Independent assessment and training,
-          drawn from a career at the sharp end of public safety, that surface the
-          hazards your team has stopped seeing.
+          Having a plan is different from being prepared to execute it. DTAC
+          Solutions helps organizations close that gap &mdash; identifying
+          vulnerabilities and building the capability to respond, before a
+          critical incident does it for them.
         </motion.p>
 
         <motion.div

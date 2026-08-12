@@ -5,8 +5,8 @@ export const site = {
   name: "DTAC Solutions",
   legalName: "DTAC Solutions LLC",
   principal: "Royce",
-  tagline: "All-hazard risk assessment & safety training",
-  role: "Risk, Safety & Use-of-Force Consultant",
+  tagline: "Critical-incident preparedness for organizations",
+  role: "Emergency Preparedness & Risk Consulting",
 
   // TODO: replace with the real Calendly scheduling link. Only used when
   // flags.enableBooking is true (see below).
