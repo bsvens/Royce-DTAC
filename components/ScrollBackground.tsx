@@ -31,8 +31,6 @@ export default function ScrollBackground() {
       />
 
       <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 grid-field-fixed" />
-
         <motion.div
           className="absolute left-1/2 h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-accent/[0.12] blur-[150px]"
           style={
