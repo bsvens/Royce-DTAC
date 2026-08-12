@@ -1,39 +1,130 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/lib/site";
+import { ArrowIcon } from "./icons";
+
+const EASE = [0.21, 0.47, 0.32, 0.98] as const;
+
+const line1 = ["Most", "risks", "aren’t", "hidden."];
+const line2 = ["They’re", "overlooked."];
 
 export default function Hero() {
+  const reduce = useReducedMotion();
+
+  const container = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+  };
+  const word = {
+    hidden: reduce ? { opacity: 0 } : { opacity: 0, y: "0.4em" },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: EASE },
+    },
+  };
+  const fade = {
+    hidden: { opacity: 0, y: reduce ? 0 : 14 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+  };
+
   return (
-    <section id="top" className="border-b border-slate-200 bg-white">
-      <div className="mx-auto max-w-content px-5 py-20 sm:py-28">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-          {site.name}
-        </p>
+    <section id="top" className="relative overflow-hidden border-b hairline">
+      {/* Ambient layers */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 grid-field" />
+        <div className="absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px] animate-glow-drift" />
+        <div className="absolute -right-24 top-24 h-72 w-72 rounded-full bg-sky-500/10 blur-[100px]" />
+      </div>
 
-        <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-tight text-ink sm:text-5xl md:text-6xl">
-          Most risks aren&rsquo;t hidden. They&rsquo;re overlooked.
-        </h1>
+      <div className="relative mx-auto max-w-content px-5 pb-20 pt-20 sm:pb-28 sm:pt-28">
+        {/* Operational status row — mono density */}
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fade}
+          className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
+        >
+          <span className="flex items-center gap-2 text-accent">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+            </span>
+            Available
+          </span>
+          <span className="h-3 w-px bg-white/20" />
+          <span>Assessment</span>
+          <span className="text-ink-faint/50">/</span>
+          <span>Training</span>
+          <span className="text-ink-faint/50">/</span>
+          <span>Readiness</span>
+        </motion.div>
 
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-muted">
+        {/* Headline — word by word */}
+        <motion.h1
+          initial="hidden"
+          animate="show"
+          variants={container}
+          className="mt-7 max-w-4xl font-serif text-[2.65rem] font-semibold leading-[1.03] tracking-tight text-ink sm:text-6xl md:text-7xl"
+        >
+          <span className="block">
+            {line1.map((w, i) => (
+              <span key={i} className="inline-block overflow-hidden align-bottom">
+                <motion.span variants={word} className="inline-block">
+                  {w}
+                  {i < line1.length - 1 ? " " : ""}
+                </motion.span>
+              </span>
+            ))}
+          </span>
+          <span className="block text-accent">
+            {line2.map((w, i) => (
+              <span key={i} className="inline-block overflow-hidden align-bottom">
+                <motion.span variants={word} className="inline-block">
+                  {w}
+                  {i < line2.length - 1 ? " " : ""}
+                </motion.span>
+              </span>
+            ))}
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial="hidden"
+          animate="show"
+          variants={fade}
+          transition={{ delay: 0.55 }}
+          className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted"
+        >
           Readiness isn&rsquo;t a binder on a shelf. It&rsquo;s knowing where you
           stand before something goes wrong. Independent assessment and training
           that surface the hazards your team has stopped seeing.
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fade}
+          transition={{ delay: 0.68 }}
+          className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+        >
           <a
             href={site.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-accent-strong"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-semibold text-[#0a0d13] shadow-[0_10px_30px_-10px_rgba(245,165,36,0.6)] transition-all hover:bg-accent-soft hover:shadow-[0_14px_40px_-10px_rgba(245,165,36,0.7)]"
           >
             Book a free consultation
+            <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-md border border-slate-300 px-6 py-3 text-base font-semibold text-ink transition-colors hover:border-ink hover:bg-slate-50"
+            className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3.5 text-base font-semibold text-ink transition-colors hover:border-white/25 hover:bg-white/[0.08]"
           >
             Send a message
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

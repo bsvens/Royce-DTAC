@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
@@ -12,10 +12,78 @@ html {
 }
 
 body {
-  @apply bg-white text-ink antialiased;
+  /* Committed dark ground painted explicitly so the page holds on any host. */
+  background-color: #0a0d13;
+  color: #eef2f7;
 }
 
-/* Give anchor targets breathing room below the sticky header. */
+::selection {
+  background: rgba(245, 165, 36, 0.28);
+  color: #fff;
+}
+
+/* Anchor targets clear the sticky header. */
 section[id] {
   scroll-margin-top: 5rem;
+}
+
+/* Dark, quiet scrollbar. */
+* {
+  scrollbar-color: #2a323f #0a0d13;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d13;
+}
+::-webkit-scrollbar-thumb {
+  background: #232b37;
+  border-radius: 9999px;
+  border: 2px solid #0a0d13;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #313a48;
+}
+
+@layer components {
+  /* Faint engineering grid — texture without noise. */
+  .grid-field {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  /* Hairline used to separate dense sections. */
+  .hairline {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* iOS-style glass surface: translucent fill + blur + inner highlight. */
+  .glass {
+    background: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(28px) saturate(140%);
+    -webkit-backdrop-filter: blur(28px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 24px 70px -24px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
