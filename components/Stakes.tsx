@@ -8,9 +8,11 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 // NOTE: Real, sourced figures — VERIFY AND UPDATE before launch, and refresh
 // annually. Sources:
-//   FBI, "Active Shooter Incidents in the United States in 2023" (2024):
-//     48 incidents in 2023, up 60% from 30 in 2019.
-//     https://www.fbi.gov/news/press-releases/fbi-releases-2023-active-shooter-incidents-in-the-united-states-report
+//   FBI, "Active Shooter Incidents in the United States in 2024" (Jun 2025):
+//     24 incidents in 2024, in 19 states; settings included education and
+//     houses of worship. (Down 50% from 48 in 2023 — so we frame this stat
+//     around where it happens, not the year-over-year trend.)
+//     https://www.fbi.gov/news/press-releases/fbi-releases-2024-active-shooter-incidents-in-the-united-states-report
 //   FBI / ALERRT research: most incidents end within ~5 minutes, many before
 //     police arrive.
 //   Fusion Risk Management employee survey: 76% have a written emergency plan,
@@ -20,11 +22,11 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 //     https://www.osha.gov/workplace-violence
 const stats = [
   {
-    figure: "48",
+    figure: "24",
     unit: "",
     label:
-      "active-shooter incidents in the U.S. in 2023 — up 60% from five years earlier.",
-    source: "FBI, 2023",
+      "active-shooter incidents in 2024 — across 19 states, from schools to houses of worship.",
+    source: "FBI, 2024",
   },
   {
     figure: "5",
@@ -54,9 +56,9 @@ export default function Stakes() {
   return (
     <section
       id="stakes"
-      className="relative flex min-h-[100svh] snap-start items-center border-b hairline bg-panel/40"
+      className="relative snap-start border-b hairline bg-panel/40"
     >
-      <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
+      <div className="mx-auto w-full max-w-content px-5 py-16 sm:py-20">
         <Reveal>
           <Eyebrow>The stakes</Eyebrow>
           <h2 className="mt-5 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
