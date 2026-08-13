@@ -53,26 +53,18 @@ export default function Header() {
             href={site.calendlyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft sm:inline-flex"
+            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft"
           >
             Book a consultation
           </a>
         ) : (
           <a
             href="#contact"
-            className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft sm:inline-flex"
+            className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#0a0d13] transition-colors hover:bg-accent-soft"
           >
             Get in touch
           </a>
         )}
-
-        {/* Mobile: single compact action. */}
-        <a
-          href="#contact"
-          className="rounded-lg border border-white/10 bg-white/5 px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:bg-white/10 sm:hidden"
-        >
-          Contact
-        </a>
       </div>
     </header>
   );

@@ -28,14 +28,13 @@ const postCourse = [
 
 function CredentialList({ items }: { items: string[] }) {
   return (
-    <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="mt-4 flex flex-wrap gap-2">
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-2.5 text-sm text-ink/85">
-          <span
-            aria-hidden
-            className="mt-[0.45rem] h-1 w-1 flex-none rounded-full bg-accent/80"
-          />
-          <span className="leading-snug">{item}</span>
+        <li
+          key={item}
+          className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-ink-muted"
+        >
+          {item}
         </li>
       ))}
     </ul>
@@ -62,10 +61,12 @@ export default function Experience() {
               operated where the margin for a missed risk is smallest.
             </p>
             <p>
-              His work spans incident command, emergency management, and
-              behavioral-health response — anticipating and mitigating risk for
-              major operations and community events. The credentials below are
-              held through California public-safety boards and institutions.
+              His experience spans incident command and emergency management,
+              supervising a behavioral-health program, and serving as an
+              all-hazard evaluator responsible for anticipating and mitigating
+              risk at major operations and community events. The credentials
+              below are held through California public-safety boards and
+              institutions.
             </p>
           </div>
         </Reveal>
@@ -79,11 +80,8 @@ export default function Experience() {
 
             <div className="mt-10">
               <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
-                Coursework
+                Coursework · <span className="font-serif normal-case italic tracking-normal text-ink-muted">POST Supervisory Course</span>
               </p>
-              <h3 className="mt-2 font-serif text-lg font-semibold text-ink">
-                POST Supervisory Course
-              </h3>
               <CredentialList items={postCourse} />
             </div>
           </div>

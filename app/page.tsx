@@ -7,7 +7,7 @@ import Experience from "@/components/Experience";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import MobileCTA from "@/components/MobileCTA";
+import ScrollCTA from "@/components/ScrollCTA";
 import ScrollBackground from "@/components/ScrollBackground";
 import { flags } from "@/lib/site";
 
@@ -34,9 +34,7 @@ export default function Home() {
       </main>
       <Footer />
 
-      {/* Spacer so the fixed mobile action bar never covers the footer. */}
-      <div aria-hidden className="h-20 sm:hidden" />
-      <MobileCTA />
+      <ScrollCTA />
     </>
   );
 }
