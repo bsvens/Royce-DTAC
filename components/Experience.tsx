@@ -50,7 +50,7 @@ export default function Experience() {
     >
       <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <Reveal>
-          <Eyebrow>04 / Who you&rsquo;re working with</Eyebrow>
+          <Eyebrow>Background</Eyebrow>
           <h2 className="mt-5 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
             An independent, practitioner-informed perspective
           </h2>

@@ -12,12 +12,21 @@ export const site = {
   // flags.enableBooking is true (see below).
   calendlyUrl: "https://calendly.com/your-handle/free-consultation",
 
-  // TODO: replace with the real Formspree form endpoint (e.g.
-  // https://formspree.io/f/abcdwxyz). The current value is a placeholder.
+  // Google Voice line (part of the Google Workspace / Business setup). Calls
+  // and texts ring/forward to Royce, and the number keeps his personal line
+  // private. TODO: replace with the real Google Voice number.
+  //   phone       — E.164 format, used for tel:/sms: links
+  //   phoneDisplay — human-readable, shown on the page
+  phone: "+15550000000",
+  phoneDisplay: "(555) 000-0000",
+
+  // Lead-capture form target. Point this at a Formspree form (or any handler)
+  // that delivers to the Google Workspace inbox, so form leads reach Royce the
+  // same place as calls and texts. TODO: replace with the real endpoint.
   formspreeEndpoint: "https://formspree.io/f/your-form-id",
 
-  // TODO: replace with the real contact address.
-  contactEmail: "hello@roycedtac.com",
+  // Google Workspace inbox. TODO: replace with the real address.
+  contactEmail: "royce@dtacsolutions.com",
 } as const;
 
 export const flags = {

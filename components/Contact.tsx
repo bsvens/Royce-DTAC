@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { site, flags } from "@/lib/site";
 import { Reveal } from "./motion/Reveal";
 import { Eyebrow } from "./Eyebrow";
-import { CalendarIcon, ChatIcon, MailIcon, CheckIcon, ArrowIcon } from "./icons";
+import { CalendarIcon, PhoneIcon, ChatIcon, CheckIcon, ArrowIcon } from "./icons";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -55,14 +55,14 @@ export default function Contact() {
         ]
       : []),
     {
-      label: "Message",
-      icon: ChatIcon,
-      onClick: () => messageRef.current?.focus(),
+      label: "Call",
+      icon: PhoneIcon,
+      href: `tel:${site.phone}`,
     },
     {
-      label: "Email",
-      icon: MailIcon,
-      href: `mailto:${site.contactEmail}`,
+      label: "Text",
+      icon: ChatIcon,
+      href: `sms:${site.phone}`,
     },
   ];
 
@@ -73,15 +73,14 @@ export default function Contact() {
     >
       {/* Refracting light behind the glass */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/20 blur-[110px]" />
-        <div className="absolute right-10 top-10 h-64 w-64 rounded-full bg-sky-500/10 blur-[100px]" />
+        <div className="absolute left-1/2 top-1/3 h-80 w-80 -translate-x-1/2 rounded-full bg-accent/[0.14] blur-[120px]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* Intro */}
           <Reveal>
-            <Eyebrow>05 / Start here</Eyebrow>
+            <Eyebrow>Contact</Eyebrow>
             <h2 className="mt-5 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
               Start with a conversation
             </h2>
@@ -90,8 +89,16 @@ export default function Contact() {
               workforce, a plan. The first conversation is free, confidential,
               and without obligation.
             </p>
-            <p className="mt-4 font-mono text-sm text-ink-faint">
-              Every message is read personally.
+            <p className="mt-6">
+              <a
+                href={`tel:${site.phone}`}
+                className="font-serif text-2xl font-semibold text-ink transition-colors hover:text-accent"
+              >
+                {site.phoneDisplay}
+              </a>
+            </p>
+            <p className="mt-2 text-sm text-ink-muted">
+              Call or text directly — it reaches Royce, not a call center.
             </p>
           </Reveal>
 
@@ -158,26 +165,17 @@ export default function Contact() {
                     );
                     const shell =
                       "group/act flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] py-3.5 transition-colors hover:bg-white/[0.06]";
-                    return action.href ? (
+                    return (
                       <a
                         key={action.label}
                         href={action.href}
-                        {...(action.external
+                        {...("external" in action && action.external
                           ? { target: "_blank", rel: "noopener noreferrer" }
                           : {})}
                         className={shell}
                       >
                         {inner}
                       </a>
-                    ) : (
-                      <button
-                        key={action.label}
-                        type="button"
-                        onClick={action.onClick}
-                        className={shell}
-                      >
-                        {inner}
-                      </button>
                     );
                   })}
                 </div>

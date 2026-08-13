@@ -45,7 +45,6 @@ export default function Hero() {
           variants={fade}
           className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
         >
-          <span aria-hidden className="h-px w-8 flex-none bg-accent/70" />
           {disciplines.map((d, i) => (
             <span key={d} className="flex items-center gap-3">
               {i > 0 && <span className="text-ink-faint/50">/</span>}
@@ -131,10 +130,10 @@ export default function Hero() {
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
-                href={`mailto:${site.contactEmail}`}
+                href={`tel:${site.phone}`}
                 className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3.5 text-base font-semibold text-ink transition-colors hover:border-white/25 hover:bg-white/[0.08]"
               >
-                Email Royce
+                Call or text
               </a>
             </>
           )}

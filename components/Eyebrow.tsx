@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
 
-// A restrained editorial label: a short solid rule + mono caps. Replaces the
-// earlier hazard-stripe motif — cleaner, more serious.
+// A quiet, professional section label: uppercase, letter-spaced, no rule and
+// no decorative numbering.
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest2 text-accent">
-      <span aria-hidden className="h-px w-8 flex-none bg-accent/70" />
+    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
       {children}
     </p>
   );

@@ -35,7 +35,7 @@ export default function Purpose() {
     >
       <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <Reveal>
-          <Eyebrow>01 / Purpose</Eyebrow>
+          <Eyebrow>Purpose</Eyebrow>
           <h2 className="mt-5 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
             Preparedness, built around the people who have to execute the plan.
           </h2>
@@ -58,10 +58,7 @@ export default function Purpose() {
               transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
               className="bg-base/80 p-6 sm:p-7"
             >
-              <p className="font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-3 font-serif text-2xl font-semibold text-ink">
+              <h3 className="font-serif text-2xl font-semibold text-ink">
                 {p.label}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">

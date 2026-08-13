@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plexSerif.variable} ${plexSans.variable} ${plexMono.variable} snap-y snap-proximity scroll-pt-16`}
+      className={`${plexSerif.variable} ${plexSans.variable} ${plexMono.variable}`}
     >
       <body className="min-h-screen bg-base font-sans text-ink antialiased">
         {children}

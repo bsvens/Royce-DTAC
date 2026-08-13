@@ -9,6 +9,18 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 4rem;
+  /* Gentle default (touch / coarse pointers): tall stacked sections stay
+     reachable and never trap the reader. */
+  scroll-snap-type: y proximity;
+}
+
+/* Desktop / trackpad / mouse: commit firmly to the next section on each
+   swipe instead of rubber-banding back. */
+@media (pointer: fine) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
 }
 
 body {

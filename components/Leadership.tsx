@@ -25,7 +25,7 @@ export default function Leadership() {
       <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <Reveal>
-            <Eyebrow>03 / For leadership</Eyebrow>
+            <Eyebrow>For leadership</Eyebrow>
             <h2 className="mt-5 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
               The questions worth answering first
             </h2>

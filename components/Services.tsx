@@ -43,7 +43,7 @@ export default function Services() {
     >
       <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
         <Reveal>
-          <Eyebrow>02 / What we do</Eyebrow>
+          <Eyebrow>What we do</Eyebrow>
           <h2 className="mt-5 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
             Four core services, evaluated as one system
           </h2>
@@ -64,14 +64,9 @@ export default function Services() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
               className="group relative flex flex-col rounded-2xl border border-white/10 bg-base/50 p-7 transition-colors duration-300 hover:border-accent/40 sm:p-8"
             >
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-[0.7rem] uppercase tracking-widest2 text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint">
-                  {service.tag}
-                </span>
-              </div>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                {service.tag}
+              </span>
               <h3 className="mt-4 font-serif text-2xl font-semibold leading-tight text-ink">
                 {service.title}
               </h3>

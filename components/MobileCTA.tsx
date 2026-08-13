@@ -1,9 +1,9 @@
 import { site, flags } from "@/lib/site";
-import { CalendarIcon, ChatIcon, MailIcon } from "./icons";
+import { CalendarIcon, PhoneIcon, ChatIcon } from "./icons";
 
 // App-like fixed action bar — mobile only. Sits above the home-indicator via
-// safe-area inset. Hidden from sm: up, where header CTAs take over. Adapts to
-// whether live booking is enabled.
+// safe-area inset. Hidden from sm: up, where header CTAs take over. With
+// booking off, it leads with the Google Voice line: call, or text.
 export default function MobileCTA() {
   const booking = flags.enableBooking;
 
@@ -15,10 +15,10 @@ export default function MobileCTA() {
         Icon: CalendarIcon,
       }
     : {
-        href: "#contact",
-        label: "Get in touch",
+        href: `tel:${site.phone}`,
+        label: "Call Royce",
         external: false,
-        Icon: ChatIcon,
+        Icon: PhoneIcon,
       };
 
   return (
@@ -36,11 +36,11 @@ export default function MobileCTA() {
             {primary.label}
           </a>
           <a
-            href={`mailto:${site.contactEmail}`}
-            aria-label="Email Royce"
+            href={`sms:${site.phone}`}
+            aria-label="Text Royce"
             className="grid h-11 w-11 flex-none place-items-center rounded-xl border border-white/10 bg-white/5 text-ink transition-colors active:bg-white/10"
           >
-            <MailIcon className="h-5 w-5" />
+            <ChatIcon className="h-5 w-5" />
           </a>
         </div>
       </div>
