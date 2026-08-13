@@ -1,8 +1,6 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { site, flags } from "@/lib/site";
-import { ArrowIcon } from "./icons";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -17,7 +15,6 @@ const disciplines = [
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  const booking = flags.enableBooking;
 
   const container = {
     hidden: {},
@@ -94,50 +91,6 @@ export default function Hero() {
           vulnerabilities and building the capability to respond, before a
           critical incident does it for them.
         </motion.p>
-
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={fade}
-          transition={{ delay: 0.68 }}
-          className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-        >
-          {booking ? (
-            <>
-              <a
-                href={site.calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-semibold text-[#0a0d13] shadow-[0_10px_30px_-10px_rgba(245,165,36,0.6)] transition-all hover:bg-accent-soft hover:shadow-[0_14px_40px_-10px_rgba(245,165,36,0.7)]"
-              >
-                Book a free consultation
-                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3.5 text-base font-semibold text-ink transition-colors hover:border-white/25 hover:bg-white/[0.08]"
-              >
-                Send a message
-              </a>
-            </>
-          ) : (
-            <>
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-semibold text-[#0a0d13] shadow-[0_10px_30px_-10px_rgba(245,165,36,0.6)] transition-all hover:bg-accent-soft hover:shadow-[0_14px_40px_-10px_rgba(245,165,36,0.7)]"
-              >
-                Get in touch
-                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href={`tel:${site.phone}`}
-                className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3.5 text-base font-semibold text-ink transition-colors hover:border-white/25 hover:bg-white/[0.08]"
-              >
-                Call or text
-              </a>
-            </>
-          )}
-        </motion.div>
       </div>
     </section>
   );
