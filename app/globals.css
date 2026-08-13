@@ -10,14 +10,15 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 4rem;
-  /* Gentle default (touch / coarse pointers): tall stacked sections stay
-     reachable and never trap the reader. */
-  scroll-snap-type: y proximity;
+  /* Free scroll by default — this is what touch devices get, so mobile never
+     fights the reader mid-section. */
+  scroll-snap-type: none;
 }
 
-/* Desktop / trackpad / mouse: commit firmly to the next section on each
-   swipe instead of rubber-banding back. */
-@media (pointer: fine) {
+/* Desktop only (mouse/trackpad, with room to spare): commit firmly to the next
+     section on each swipe. Full-height sections that overflow on small screens
+     make snap feel like it's locking halfway, so it stays off there. */
+@media (pointer: fine) and (min-height: 640px) {
   html {
     scroll-snap-type: y mandatory;
   }
