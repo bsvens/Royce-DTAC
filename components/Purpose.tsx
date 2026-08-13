@@ -61,7 +61,7 @@ export default function Purpose() {
               <h3 className="font-serif text-2xl font-semibold text-ink">
                 {p.label}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted lg:text-base">
                 {p.line}
               </p>
             </motion.div>

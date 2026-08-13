@@ -68,7 +68,7 @@ export default function Stakes() {
                 Preparedness isn&rsquo;t abstract
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-ink-muted">
+            <p className="max-w-md text-sm leading-relaxed text-ink-muted lg:text-base">
               The events organizations prepare for are more frequent — and
               faster — than most plans assume. And most plans are never practiced.
             </p>
@@ -93,10 +93,10 @@ export default function Stakes() {
                   </span>
                 )}
               </p>
-              <p className="mt-3 text-sm leading-snug text-ink-muted">
+              <p className="mt-3 text-sm leading-snug text-ink-muted lg:text-base">
                 {s.label}
               </p>
-              <p className="mt-2.5 font-mono text-[0.65rem] uppercase tracking-widest text-ink-faint">
+              <p className="mt-2.5 font-mono text-[0.65rem] uppercase tracking-widest text-ink-faint lg:text-xs">
                 {s.source}
               </p>
             </motion.div>

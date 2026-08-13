@@ -97,7 +97,7 @@ export default function Contact() {
                 {site.phoneDisplay}
               </a>
             </p>
-            <p className="mt-2 text-sm text-ink-muted">
+            <p className="mt-2 text-sm text-ink-muted lg:text-base">
               Call or text for the fastest response — it reaches Royce directly,
               not a call center. Prefer to put it in writing? Send a note instead.
             </p>
@@ -141,13 +141,13 @@ export default function Contact() {
                   <h3 className="mt-4 font-serif text-xl font-semibold text-ink">
                     {site.name}
                   </h3>
-                  <p className="mt-1 font-mono text-xs uppercase tracking-widest text-ink-faint">
+                  <p className="mt-1 font-mono text-xs uppercase tracking-widest text-ink-faint lg:text-sm">
                     {site.role}
                   </p>
                 </div>
 
                 {/* Quick actions — the expedited path */}
-                <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.16em] text-accent lg:text-sm">
                   Fastest response
                 </p>
                 <div
@@ -162,7 +162,7 @@ export default function Contact() {
                         <span className="grid h-11 w-11 place-items-center rounded-full bg-accent/10 text-accent ring-1 ring-inset ring-white/10 transition-colors group-hover/act:bg-accent/20">
                           <Icon className="h-[18px] w-[18px]" />
                         </span>
-                        <span className="font-mono text-[0.7rem] uppercase tracking-wide text-ink-muted">
+                        <span className="font-mono text-[0.7rem] uppercase tracking-wide text-ink-muted lg:text-xs">
                           {action.label}
                         </span>
                       </>
@@ -187,7 +187,7 @@ export default function Contact() {
                 {/* Labeled divider — the written alternative */}
                 <div className="my-6 flex items-center gap-3">
                   <span className="h-px flex-1 bg-white/10" />
-                  <span className="text-xs uppercase tracking-[0.14em] text-ink-faint">
+                  <span className="text-xs uppercase tracking-[0.14em] text-ink-faint lg:text-sm">
                     Or send a note
                   </span>
                   <span className="h-px flex-1 bg-white/10" />
@@ -197,13 +197,13 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-medium uppercase tracking-wide text-ink-muted">
+                      <label htmlFor="name" className="block text-xs font-medium uppercase tracking-wide text-ink-muted lg:text-sm">
                         Name
                       </label>
                       <input id="name" name="name" type="text" required autoComplete="name" className={fieldClass} />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs font-medium uppercase tracking-wide text-ink-muted">
+                      <label htmlFor="email" className="block text-xs font-medium uppercase tracking-wide text-ink-muted lg:text-sm">
                         Email
                       </label>
                       <input id="email" name="email" type="email" required autoComplete="email" className={fieldClass} />
@@ -211,14 +211,14 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="organization" className="block text-xs font-medium uppercase tracking-wide text-ink-muted">
+                    <label htmlFor="organization" className="block text-xs font-medium uppercase tracking-wide text-ink-muted lg:text-sm">
                       Organization <span className="text-ink-faint">(optional)</span>
                     </label>
                     <input id="organization" name="organization" type="text" autoComplete="organization" className={fieldClass} />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-medium uppercase tracking-wide text-ink-muted">
+                    <label htmlFor="message" className="block text-xs font-medium uppercase tracking-wide text-ink-muted lg:text-sm">
                       What can I help with?
                     </label>
                     <textarea id="message" name="message" ref={messageRef} rows={4} required className={fieldClass} />

@@ -22,7 +22,7 @@ function CredentialList({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-ink-muted"
+          className="rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-ink-muted lg:text-[0.95rem]"
         >
           {item}
         </li>
@@ -63,11 +63,11 @@ export default function Experience() {
 
         <Reveal delay={0.1}>
           <div className="mt-12 border-t border-white/10 pt-10">
-            <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
+            <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint lg:text-sm">
               Credentials
             </p>
             <CredentialList items={credentials} />
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted">
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted lg:text-base">
               State-certified in incident command, emergency management, and
               active-shooter response (California POST).
             </p>

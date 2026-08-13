@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 // no decorative numbering.
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent lg:text-sm">
       {children}
     </p>
   );

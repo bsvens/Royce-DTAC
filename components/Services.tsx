@@ -64,7 +64,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
               className="group relative flex flex-col rounded-2xl border border-white/10 bg-base/50 p-7 transition-colors duration-300 hover:border-accent/40 sm:p-8"
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent lg:text-sm">
                 {service.tag}
               </span>
               <h3 className="mt-4 font-serif text-2xl font-semibold leading-tight text-ink">

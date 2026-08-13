@@ -10,7 +10,7 @@ export default function Footer() {
           <p className="font-serif text-lg font-semibold text-ink">
             DTAC <span className="font-normal text-ink-muted">Solutions</span>
           </p>
-          <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink-faint">
+          <p className="mt-1 font-mono text-xs uppercase tracking-wide text-ink-faint lg:text-sm">
             {site.tagline}
           </p>
         </div>

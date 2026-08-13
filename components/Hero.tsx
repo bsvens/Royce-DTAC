@@ -91,7 +91,7 @@ export default function Hero() {
           animate="show"
           variants={fade}
           transition={{ delay: 0.62 }}
-          className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/10 pt-6 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
+          className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/10 pt-6 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint lg:text-[0.8rem]"
         >
           {disciplines.map((d, i) => (
             <span key={d} className="flex items-center gap-3">
