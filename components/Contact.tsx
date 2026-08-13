@@ -98,7 +98,8 @@ export default function Contact() {
               </a>
             </p>
             <p className="mt-2 text-sm text-ink-muted">
-              Call or text directly — it reaches Royce, not a call center.
+              Call or text for the fastest response — it reaches Royce directly,
+              not a call center. Prefer to put it in writing? Send a note instead.
             </p>
           </Reveal>
 
@@ -145,9 +146,12 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* Quick actions */}
+                {/* Quick actions — the expedited path */}
+                <p className="mt-6 text-center text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                  Fastest response
+                </p>
                 <div
-                  className={`mt-6 grid gap-2.5 ${
+                  className={`mt-3 grid gap-2.5 ${
                     actions.length === 3 ? "grid-cols-3" : "grid-cols-2"
                   }`}
                 >
@@ -180,7 +184,14 @@ export default function Contact() {
                   })}
                 </div>
 
-                <div className="my-6 h-px bg-white/10" />
+                {/* Labeled divider — the written alternative */}
+                <div className="my-6 flex items-center gap-3">
+                  <span className="h-px flex-1 bg-white/10" />
+                  <span className="text-xs uppercase tracking-[0.14em] text-ink-faint">
+                    Or send a note
+                  </span>
+                  <span className="h-px flex-1 bg-white/10" />
+                </div>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-4" noValidate>
