@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -44,22 +45,26 @@ export default function Hero() {
         >
           <span className="block">
             {line1.map((w, i) => (
-              <span key={i} className="inline-block overflow-hidden align-bottom">
-                <motion.span variants={word} className="inline-block">
-                  {w}
-                  {i < line1.length - 1 ? " " : ""}
-                </motion.span>
-              </span>
+              <Fragment key={i}>
+                <span className="inline-block overflow-hidden align-bottom">
+                  <motion.span variants={word} className="inline-block">
+                    {w}
+                  </motion.span>
+                </span>
+                {i < line1.length - 1 ? " " : null}
+              </Fragment>
             ))}
           </span>
           <span className="block text-accent">
             {line2.map((w, i) => (
-              <span key={i} className="inline-block overflow-hidden align-bottom">
-                <motion.span variants={word} className="inline-block">
-                  {w}
-                  {i < line2.length - 1 ? " " : ""}
-                </motion.span>
-              </span>
+              <Fragment key={i}>
+                <span className="inline-block overflow-hidden align-bottom">
+                  <motion.span variants={word} className="inline-block">
+                    {w}
+                  </motion.span>
+                </span>
+                {i < line2.length - 1 ? " " : null}
+              </Fragment>
             ))}
           </span>
         </motion.h1>
