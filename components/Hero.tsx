@@ -77,7 +77,8 @@ export default function Hero() {
           className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted"
         >
           <span className="font-medium text-ink">
-            DTAC Solutions is critical-incident preparedness for organizations.
+            DTAC Solutions offers critical-incident preparedness for
+            organizations.
           </span>{" "}
           Having a plan is different from being prepared to execute it — we help
           you close that gap, identifying vulnerabilities and building the
