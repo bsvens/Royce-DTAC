@@ -3,35 +3,33 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "./motion/Reveal";
 import { Eyebrow } from "./Eyebrow";
-import { CheckIcon } from "./icons";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
 const services = [
   {
-    ref: "SVC / ASSESSMENT & PLANNING",
-    title: "Assessment & planning",
+    tag: "Assessment",
+    title: "Risk & Vulnerability Assessments",
     summary:
-      "A clear read of where the organization actually stands — its people, physical environment, existing plans, and operational capabilities.",
-    points: [
-      "Physical and operational risk assessments",
-      "Emergency plan and procedure review",
-      "Active-assailant & workplace-violence preparedness",
-      "Communication and accountability systems",
-      "Coordination with public-safety response",
-    ],
+      "A structured read of the physical, operational, and human vulnerabilities across your environment — and an honest picture of where they leave you exposed.",
   },
   {
-    ref: "SVC / TRAINING & EXERCISES",
-    title: "Training & exercises",
+    tag: "Planning",
+    title: "Emergency Preparedness & Planning",
     summary:
-      "Preparation that translates into decisions under stress — for the staff who respond first and the leaders who set priorities.",
-    points: [
-      "Staff preparedness and critical-incident training",
-      "Leadership decision-making and crisis management",
-      "Scenario-based exercises and tabletop discussions",
-      "Follow-up assessments and improvement planning",
-    ],
+      "Emergency plans and procedures reviewed and built to be realistic, executable, and understood by the people expected to use them.",
+  },
+  {
+    tag: "Training",
+    title: "Staff Readiness & Critical-Incident Training",
+    summary:
+      "Training that translates into decisions under stress, so staff know what to do when normal systems fail.",
+  },
+  {
+    tag: "Exercises",
+    title: "Scenario-Based Exercises & Executive Readiness",
+    summary:
+      "Tabletop and scenario exercises that pressure-test the plan and sharpen leadership decision-making before a real incident does.",
   },
 ];
 
@@ -47,12 +45,12 @@ export default function Services() {
         <Reveal>
           <Eyebrow>02 / What we do</Eyebrow>
           <h2 className="mt-5 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
-            Two disciplines, evaluated as one system
+            Four core services, evaluated as one system
           </h2>
           <p className="mt-4 max-w-2xl leading-relaxed text-ink-muted">
-            Every campus, facility, and workforce presents different risks. Work
-            is scoped to the organization — and to what it can realistically
-            implement.
+            Every campus, facility, and workforce presents different risks.
+            Engagements draw on any combination — scoped to the organization and
+            what it can realistically implement.
           </p>
         </Reveal>
 
@@ -63,29 +61,23 @@ export default function Services() {
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-base/50 p-7 transition-colors duration-300 hover:border-accent/40 sm:p-8"
+              transition={{ duration: 0.6, delay: i * 0.08, ease: EASE }}
+              className="group relative flex flex-col rounded-2xl border border-white/10 bg-base/50 p-7 transition-colors duration-300 hover:border-accent/40 sm:p-8"
             >
-              <p className="font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint">
-                {service.ref}
-              </p>
-              <h3 className="mt-4 font-serif text-2xl font-semibold text-ink">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[0.7rem] uppercase tracking-widest2 text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint">
+                  {service.tag}
+                </span>
+              </div>
+              <h3 className="mt-4 font-serif text-2xl font-semibold leading-tight text-ink">
                 {service.title}
               </h3>
               <p className="mt-3 leading-relaxed text-ink-muted">
                 {service.summary}
               </p>
-              <ul className="mt-6 space-y-3 border-t border-white/10 pt-6">
-                {service.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex items-start gap-3 text-sm text-ink/90"
-                  >
-                    <CheckIcon className="mt-0.5 h-4 w-4 flex-none text-accent" />
-                    <span className="leading-snug">{point}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.article>
           ))}
         </div>

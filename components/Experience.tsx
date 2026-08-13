@@ -1,67 +1,88 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "./motion/Reveal";
 import { Eyebrow } from "./Eyebrow";
 
-const EASE = [0.21, 0.47, 0.32, 0.98] as const;
-
-const credentials = [
-  { value: "Use of Force", label: "Recognized subject-matter expert" },
-  { value: "Tactical Team Leader", label: "Operational command experience" },
-  { value: "All-Hazard Evaluator", label: "Staffing & mitigation for major events" },
-  { value: "CA Certified", label: "Multiple public-safety boards & institutions" },
+const certifications = [
+  "Department Active Shooter Coordinator",
+  "Tactical Team Leader",
+  "Countywide Active Shooter Training Cadre",
+  "Department Use of Force Reviewer",
+  "Defensive Tactics Instructor",
+  "Arrest & Control Instructor",
+  "Emergency Action Plan Coordinator",
+  "Behavioral Health Program Supervisor",
+  "Incident Command Vehicle Project Manager",
+  "Field Training Officer",
 ];
 
-export default function Experience() {
-  const reduce = useReducedMotion();
+const postCourse = [
+  "Incident Command System",
+  "Leadership Development",
+  "Behavioral Health Response",
+  "Emergency Management",
+  "Active Shooter Response",
+  "Rescue Task Force",
+  "Instructor Development",
+];
 
+function CredentialList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-5 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5 text-sm text-ink/85">
+          <span
+            aria-hidden
+            className="mt-[0.45rem] h-1 w-1 flex-none rounded-full bg-accent/80"
+          />
+          <span className="leading-snug">{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default function Experience() {
   return (
     <section
       id="experience"
       className="relative flex min-h-[100svh] snap-start items-center border-b hairline bg-panel/40"
     >
       <div className="mx-auto w-full max-w-content px-5 py-20 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <Reveal>
-            <Eyebrow>04 / Who you&rsquo;re working with</Eyebrow>
-            <h2 className="mt-5 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
-              An independent, practitioner-informed perspective
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-ink-muted">
-              DTAC Solutions is led by Royce, who has spent most of his adult
-              life in law enforcement and is a subject-matter expert on use of
-              force. As a tactical team leader, he has operated where the margin
-              for a missed risk is smallest.
+        <Reveal>
+          <Eyebrow>04 / Who you&rsquo;re working with</Eyebrow>
+          <h2 className="mt-5 max-w-3xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
+            An independent, practitioner-informed perspective
+          </h2>
+          <div className="mt-6 grid max-w-4xl gap-4 text-lg leading-relaxed text-ink-muted sm:grid-cols-2 sm:gap-8">
+            <p>
+              DTAC Solutions is led by Royce, who has spent most of his adult life
+              in law enforcement and is a subject-matter expert on use of force.
+              As a tactical team leader and active-shooter coordinator, he has
+              operated where the margin for a missed risk is smallest.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-              As an all-hazard evaluator for major community events, he has been
-              responsible for anticipating and mitigating every risk a crowd can
-              present. He holds certifications from numerous California
-              public-safety boards and institutions.
+            <p>
+              His work spans incident command, emergency management, and
+              behavioral-health response — anticipating and mitigating risk for
+              major operations and community events. The credentials below are
+              held through California public-safety boards and institutions.
             </p>
-          </Reveal>
+          </div>
+        </Reveal>
 
-          <dl className="grid grid-cols-2 gap-3 self-center">
-            {credentials.map((c, i) => (
-              <motion.div
-                key={c.value}
-                initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: EASE }}
-                className="flex flex-col rounded-2xl border border-white/10 bg-base/40 p-5"
-              >
-                <dt className="font-serif text-lg font-semibold leading-tight text-accent">
-                  {c.value}
-                </dt>
-                <dd className="mt-2 text-sm leading-snug text-ink-muted">
-                  {c.label}
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
-        </div>
+        <Reveal delay={0.1}>
+          <div className="mt-12 border-t border-white/10 pt-10">
+            <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
+              Certifications &amp; assignments
+            </p>
+            <CredentialList items={certifications} />
+
+            <p className="mt-10 font-mono text-xs uppercase tracking-widest2 text-ink-faint">
+              POST Supervisory Course
+            </p>
+            <CredentialList items={postCourse} />
+          </div>
+        </Reveal>
       </div>
     </section>
   );
