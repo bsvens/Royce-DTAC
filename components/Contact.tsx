@@ -5,14 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { site, flags } from "@/lib/site";
 import { Reveal } from "./motion/Reveal";
 import { Eyebrow } from "./Eyebrow";
-import {
-  CalendarIcon,
-  ChatIcon,
-  MailIcon,
-  ShieldIcon,
-  CheckIcon,
-  ArrowIcon,
-} from "./icons";
+import { CalendarIcon, ChatIcon, MailIcon, CheckIcon, ArrowIcon } from "./icons";
 
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 
@@ -134,8 +127,8 @@ export default function Contact() {
               <>
                 {/* iOS-style contact header */}
                 <div className="flex flex-col items-center text-center">
-                  <span className="grid h-[68px] w-[68px] place-items-center rounded-full bg-gradient-to-br from-accent to-accent-strong text-[#0a0d13] shadow-[0_10px_30px_-8px_rgba(245,165,36,0.6)]">
-                    <ShieldIcon className="h-8 w-8" strokeWidth={1.8} />
+                  <span className="grid h-[64px] w-[64px] place-items-center rounded-full bg-white/[0.06] font-mono text-sm font-semibold tracking-widest text-ink ring-1 ring-inset ring-white/15">
+                    DTAC
                   </span>
                   <h3 className="mt-4 font-serif text-xl font-semibold text-ink">
                     {site.name}

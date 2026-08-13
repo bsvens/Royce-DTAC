@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { site, flags } from "@/lib/site";
-import { ShieldIcon } from "./icons";
 
 const nav = [
   { href: "#purpose", label: "Purpose" },
@@ -30,13 +29,11 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-content items-center justify-between px-5">
-        <a href="#top" className="group flex items-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 bg-white/5 text-accent">
-            <ShieldIcon className="h-4 w-4" />
-          </span>
-          <span className="font-serif text-lg font-semibold tracking-tight text-ink">
-            {site.name}
-          </span>
+        <a
+          href="#top"
+          className="font-serif text-lg font-semibold tracking-tight text-ink transition-colors hover:text-white"
+        >
+          DTAC <span className="font-normal text-ink-muted">Solutions</span>
         </a>
 
         <nav className="hidden items-center gap-9 sm:flex">
