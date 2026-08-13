@@ -77,10 +77,15 @@ export default function Experience() {
             </p>
             <CredentialList items={certifications} />
 
-            <p className="mt-10 font-mono text-xs uppercase tracking-widest2 text-ink-faint">
-              POST Supervisory Course
-            </p>
-            <CredentialList items={postCourse} />
+            <div className="mt-10">
+              <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
+                Coursework
+              </p>
+              <h3 className="mt-2 font-serif text-lg font-semibold text-ink">
+                POST Supervisory Course
+              </h3>
+              <CredentialList items={postCourse} />
+            </div>
           </div>
         </Reveal>
       </div>
