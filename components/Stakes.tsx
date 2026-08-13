@@ -16,7 +16,8 @@ const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 //   FBI / ALERRT research: most incidents end within ~5 minutes, many before
 //     police arrive.
 //   Fusion Risk Management employee survey: 76% have a written emergency plan,
-//     but only 59% have ever participated in a drill/simulation.
+//     but only 59% have ever participated in a drill/simulation — so 41% never
+//     have (100% - 59%).
 //     https://www.fusionrm.com/blogs/american-and-international-companies-preparing-for-emergencies/
 //   OSHA: ~2 million U.S. workers experience workplace violence each year.
 //     https://www.osha.gov/workplace-violence
@@ -36,10 +37,10 @@ const stats = [
     source: "FBI / ALERRT",
   },
   {
-    figure: "59",
+    figure: "41",
     unit: "%",
     label:
-      "of employees have ever practiced their emergency plan — though 76% have one on paper.",
+      "of employees have never practiced their emergency plan — though 76% have one on paper.",
     source: "Fusion Risk Mgmt.",
   },
   {
