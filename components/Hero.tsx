@@ -35,27 +35,12 @@ export default function Hero() {
       className="relative flex min-h-[100svh] snap-start items-center border-b hairline"
     >
       <div className="relative mx-auto w-full max-w-content px-5 pb-20 pt-20 sm:pb-28 sm:pt-28">
-        {/* Discipline row — real domains, no fake availability signal */}
-        <motion.div
-          initial="hidden"
-          animate="show"
-          variants={fade}
-          className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
-        >
-          {disciplines.map((d, i) => (
-            <span key={d} className="flex items-center gap-3">
-              {i > 0 && <span className="text-ink-faint/50">/</span>}
-              <span>{d}</span>
-            </span>
-          ))}
-        </motion.div>
-
         {/* Headline — word by word */}
         <motion.h1
           initial="hidden"
           animate="show"
           variants={container}
-          className="mt-7 max-w-4xl font-serif text-[2.65rem] font-semibold leading-[1.03] tracking-tight text-ink sm:text-6xl md:text-7xl"
+          className="max-w-4xl font-serif text-[2.65rem] font-semibold leading-[1.03] tracking-tight text-ink sm:text-6xl md:text-7xl"
         >
           <span className="block">
             {line1.map((w, i) => (
@@ -83,14 +68,32 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           variants={fade}
-          transition={{ delay: 0.55 }}
+          transition={{ delay: 0.5 }}
           className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted"
         >
-          Having a plan is different from being prepared to execute it. DTAC
-          Solutions helps organizations close that gap &mdash; identifying
-          vulnerabilities and building the capability to respond, before a
-          critical incident does it for them.
+          <span className="font-medium text-ink">
+            DTAC Solutions is critical-incident preparedness for organizations.
+          </span>{" "}
+          Having a plan is different from being prepared to execute it — we help
+          you close that gap, identifying vulnerabilities and building the
+          capability to respond before a critical incident does it for you.
         </motion.p>
+
+        {/* Discipline row — moved below so the headline leads */}
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fade}
+          transition={{ delay: 0.62 }}
+          className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-white/10 pt-6 font-mono text-[0.7rem] uppercase tracking-widest2 text-ink-faint"
+        >
+          {disciplines.map((d, i) => (
+            <span key={d} className="flex items-center gap-3">
+              {i > 0 && <span className="text-ink-faint/50">/</span>}
+              <span>{d}</span>
+            </span>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
