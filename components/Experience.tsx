@@ -3,27 +3,17 @@
 import { Reveal } from "./motion/Reveal";
 import { Eyebrow } from "./Eyebrow";
 
-const certifications = [
-  "Department Active Shooter Coordinator",
-  "Tactical Team Leader",
-  "Countywide Active Shooter Training Cadre",
-  "Department Use of Force Reviewer",
-  "Defensive Tactics Instructor",
-  "Arrest & Control Instructor",
+// Curated for a client audience — the roles that signal authority on the
+// problems clients actually hire DTAC for (active-shooter readiness, emergency
+// planning, behavioral/threat, command). LE-internal roles (defensive tactics,
+// arrest & control, field training, etc.) are intentionally omitted.
+const credentials = [
+  "Department Active-Shooter Coordinator",
   "Emergency Action Plan Coordinator",
+  "Countywide Active-Shooter Training Cadre",
   "Behavioral Health Program Supervisor",
-  "Incident Command Vehicle Project Manager",
-  "Field Training Officer",
-];
-
-const postCourse = [
-  "Incident Command System",
-  "Leadership Development",
-  "Behavioral Health Response",
-  "Emergency Management",
-  "Active Shooter Response",
-  "Rescue Task Force",
-  "Instructor Development",
+  "Tactical Team Leader",
+  "Use-of-Force Reviewer",
 ];
 
 function CredentialList({ items }: { items: string[] }) {
@@ -74,16 +64,13 @@ export default function Experience() {
         <Reveal delay={0.1}>
           <div className="mt-12 border-t border-white/10 pt-10">
             <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
-              Certifications &amp; assignments
+              Credentials
             </p>
-            <CredentialList items={certifications} />
-
-            <div className="mt-10">
-              <p className="font-mono text-xs uppercase tracking-widest2 text-ink-faint">
-                Coursework · <span className="font-serif normal-case italic tracking-normal text-ink-muted">POST Supervisory Course</span>
-              </p>
-              <CredentialList items={postCourse} />
-            </div>
+            <CredentialList items={credentials} />
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-muted">
+              State-certified in incident command, emergency management, and
+              active-shooter response (California POST).
+            </p>
           </div>
         </Reveal>
       </div>
