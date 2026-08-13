@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Stakes from "@/components/Stakes";
 import Purpose from "@/components/Purpose";
 import Services from "@/components/Services";
 import Leadership from "@/components/Leadership";
@@ -18,6 +19,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Stakes />
         <Purpose />
         <Services />
         <Leadership />
