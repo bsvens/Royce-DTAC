@@ -58,40 +58,44 @@ export default function Stakes() {
       id="stakes"
       className="relative snap-start border-b hairline bg-panel/40"
     >
-      <div className="mx-auto w-full max-w-content px-5 py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-content px-5 py-12 sm:py-14">
         <Reveal>
-          <Eyebrow>The stakes</Eyebrow>
-          <h2 className="mt-5 max-w-2xl font-serif text-3xl font-semibold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.08]">
-            Preparedness isn&rsquo;t abstract
-          </h2>
-          <p className="mt-4 max-w-2xl leading-relaxed text-ink-muted">
-            The events organizations prepare for are more frequent — and faster —
-            than most plans assume. And most plans are never practiced.
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Eyebrow>The stakes</Eyebrow>
+              <h2 className="mt-3 font-serif text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+                Preparedness isn&rsquo;t abstract
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-relaxed text-ink-muted">
+              The events organizations prepare for are more frequent — and
+              faster — than most plans assume. And most plans are never practiced.
+            </p>
+          </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 lg:mt-10 lg:grid-cols-4">
           {stats.map((s, i) => (
             <motion.div
               key={s.source + s.figure}
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 18 }}
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.55, delay: i * 0.08, ease: EASE }}
-              className="border-t border-white/15 pt-5"
+              transition={{ duration: 0.5, delay: i * 0.07, ease: EASE }}
+              className="border-t border-white/15 pt-4"
             >
-              <p className="font-serif text-5xl font-semibold leading-none tracking-tight text-accent sm:text-6xl">
+              <p className="font-serif text-4xl font-semibold leading-none tracking-tight text-accent sm:text-5xl">
                 {s.figure}
                 {s.unit && (
-                  <span className="ml-0.5 text-2xl font-medium sm:text-3xl">
+                  <span className="ml-0.5 text-xl font-medium sm:text-2xl">
                     {s.unit}
                   </span>
                 )}
               </p>
-              <p className="mt-4 text-sm leading-snug text-ink-muted">
+              <p className="mt-3 text-sm leading-snug text-ink-muted">
                 {s.label}
               </p>
-              <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-widest text-ink-faint">
+              <p className="mt-2.5 font-mono text-[0.65rem] uppercase tracking-widest text-ink-faint">
                 {s.source}
               </p>
             </motion.div>
